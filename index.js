@@ -72,7 +72,7 @@ server.delete("/api/users/:id", (req, res) => {
   db.remove(id)
     .then(deleted => {
       if (deleted) {
-        res.status(204).end();
+        res.send(204);
       } else {
         res.status(404).json({
           success: false,
